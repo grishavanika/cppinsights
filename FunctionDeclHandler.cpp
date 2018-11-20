@@ -26,6 +26,7 @@ FunctionDeclHandler::FunctionDeclHandler(Rewriter& rewrite, MatchFinder& matcher
     matcher.addMatcher(functionDecl(unless(anyOf(cxxMethodDecl(),
                                                  isExpansionInSystemHeader(),
                                                  isTemplate,
+                                                 hasParent(linkageSpecDecl()),
                                                  hasAncestor(friendDecl()),    // friendDecl has functionDecl as child
                                                  hasAncestor(functionDecl()),  // prevent forward declarations
                                                  isMacroOrInvalidLocation())))

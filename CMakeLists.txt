@@ -352,6 +352,7 @@ endif()
 # name the executable and all source files
 add_clang_tool(insights
     CodeGenerator.cpp
+    CoroutinesCodeGenerator.cpp
     CompilerGeneratedHandler.cpp
     DPrint.cpp
     FunctionDeclHandler.cpp
